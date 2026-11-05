@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="760" height="360" fill="#ffffff"/>
+  <text x="380" y="28" text-anchor="middle" font-size="17" font-weight="600" fill="#1f2937">Error budget left: 99.9% SLO, 30-day window (43.2 minutes)</text>
+
+  <!-- plot area: x 80..700 (30 days, 20.67px/day), y 60..300 (43.2 min -> 0, 5.556px/min) -->
+  <g stroke="#e5e7eb">
+    <line x1="80" y1="60" x2="700" y2="60"/>
+    <line x1="80" y1="115.6" x2="700" y2="115.6"/>
+    <line x1="80" y1="171.1" x2="700" y2="171.1"/>
+    <line x1="80" y1="226.7" x2="700" y2="226.7"/>
+  </g>
+  <line x1="80" y1="300" x2="700" y2="300" stroke="#6b7280"/>
+  <line x1="80" y1="60" x2="80" y2="300" stroke="#6b7280"/>
+
+  <g font-size="12" fill="#374151" text-anchor="end">
+    <text x="72" y="64">43.2</text>
+    <text x="72" y="119.6">33.2</text>
+    <text x="72" y="175.1">23.2</text>
+    <text x="72" y="230.7">13.2</text>
+    <text x="72" y="304">0</text>
+  </g>
+  <text x="24" y="180" font-size="12" fill="#6b7280" text-anchor="middle" transform="rotate(-90 24 180)">minutes of budget left</text>
+
+  <g font-size="12" fill="#374151" text-anchor="middle">
+    <text x="80" y="318">day 0</text>
+    <text x="183.3" y="318">5</text>
+    <text x="286.7" y="318">10</text>
+    <text x="390" y="318">15</text>
+    <text x="493.3" y="318">20</text>
+    <text x="596.7" y="318">25</text>
+    <text x="700" y="318">30</text>
+  </g>
+
+  <!-- steady 1x burn -->
+  <line x1="80" y1="60" x2="700" y2="300" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="560" y="230" font-size="12" fill="#6b7280" transform="rotate(21 560 230)">burn rate 1x: budget lasts exactly 30 days</text>
+
+  <!-- actual: (0,43.2) (5,41) (11,38) (11.05,18) (20,15) (24,13) (30,10) -->
+  <polyline fill="none" stroke="#1d4ed8" stroke-width="3"
+    points="80,60 183.3,72.2 307.3,88.9 308.3,200 493.3,216.7 576,227.8 700,244.4"/>
+  <circle cx="308" cy="200" r="5" fill="#b91c1c"/>
+
+  <text x="320" y="140" font-size="13" font-weight="600" fill="#b91c1c">day 11: bad deploy, 20 min down</text>
+  <text x="320" y="157" font-size="12" fill="#b91c1c">46% of the month's budget in one afternoon</text>
+  <text x="320" y="173" font-size="12" fill="#b91c1c">fast burn: page someone now</text>
+
+  <text x="120" y="96" font-size="12" fill="#1d4ed8">normal days: a few failed</text>
+  <text x="120" y="111" font-size="12" fill="#1d4ed8">requests, slow steady burn</text>
+
+  <text x="704" y="240" font-size="12" fill="#1d4ed8">10 min</text>
+  <text x="704" y="255" font-size="12" fill="#1d4ed8">left</text>
+
+  <text x="380" y="345" text-anchor="middle" font-size="12" fill="#374151">Budget left at the end means the team shipped and stayed reliable. A budget at zero means reliability work comes before new features.</text>
+</svg>
